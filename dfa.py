@@ -1,3 +1,4 @@
+#DFA for alphabet that accepts strings contain aa and ends with ab
 class DFA:
     def __init__(self, alphabet, transitions, start_state, accepting_states):
         self.alphabet = alphabet
