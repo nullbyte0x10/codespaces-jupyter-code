@@ -1,5 +1,5 @@
-# Define the DFA
-def dfa(input_string):
+def DFA(input_string):
+    #define the initial state
     state = 0
     for symbol in input_string:
         if state == 0:
@@ -33,11 +33,13 @@ def dfa(input_string):
 # Prompt the user for input until Q is entered
 while True:
     user_input = input("Enter a string (or Q to quit): ")
+    #if Q is entered the exit the progra
     if user_input == 'Q':
         break
     # check if the last two characters are 'aa'
-    result1 = dfa(user_input[-2:]) in [2, 4]
+    result1 = DFA(user_input[-2:]) in [2, 4]
     result2 = 'aba' in user_input  # check if the substring 'aba' is present
+    #return the results
     if result1 and result2:
         print("The input string belongs to both languages.")
     elif result1:
