@@ -1,3 +1,4 @@
+import string
 def narcissistic(value):
     # count number of digits
     num_digits = len(str(value))
@@ -28,8 +29,23 @@ def find_outliers(integers):
     else:
         return first_even
 
+def validate_pin(pin):
+    num_digits=len(str(pin))
+    digits=[]
+    for i in pin:
+        if i.isdigit():
+           digit=int(i)
+           digits.append(digit)
+        else:
+           return False
+    if num_digits==4 or num_digits==6:
+       return True
+    else:
+       return False 
+def split_string(s):
+    #split the string
+    splitted=[i for i in s]
+    return splitted
 
-if __name__ == "__main__":
-    print(find_outliers([2, 4, 0, 100, 4, 11, 2602, 36]))
-    print(find_outliers([160, 3, 1719, 19, 11, 13, -21]
-                        ))
+if __name__=="__main__":
+    print(split_string("abc"))
