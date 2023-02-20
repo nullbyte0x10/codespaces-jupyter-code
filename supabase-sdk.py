@@ -5,8 +5,9 @@ from PIL import Image, ImageDraw
 from supabase import create_client
 
 # Supabase credentials
-SUPABASE_URL = 'https://<your-project>.supabase.co'
-SUPABASE_KEY = 'sbp_3054fccf0069f110ef0a14466f14212296392889'
+SUPABASE_URL = 'https://nftulfhbavdjqcqrqbwv.supabase.co'
+# SUPABASE_KEY = 'sbp_3054fccf0069f110ef0a14466f14212296392889'
+SUPABASE_KEY="D8DMKFRQLj/iWoDCV0a1G3mH7k9uECbaQdyYL8qdu7feiFqj2BZJ8On23BGDg3vrdHN83XxtefalOPHowCP8gQ=="
 
 # Map settings
 MAP_SIZE = (800, 600)
