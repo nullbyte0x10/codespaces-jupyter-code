@@ -65,7 +65,16 @@ def increment_string(strng):
     else:
         splitted.append(str(1))
     return "".join(splitted)
+def find_uniq(arr):
+    dictionary={}
+    for x in arr:
+        if x in dictionary:
+            dictionary[x]=1
+        else:
+            dictionary[x]+=1
+    for k in dictionary:
+        if dictionary[k]==1:
+            return k
+    return None
 if __name__=="__main__":
-    print(increment_string("foo"))
-    print(increment_string("foobar23")) 
-    print(increment_string("foobar910"))
+    print(find_uniq([ 0, 0, 0.55, 0, 0 ]))
