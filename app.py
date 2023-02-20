@@ -1,6 +1,5 @@
-import whisper 
+import whisper
 import soundfile as sf
-#load audio file
-audio,sr=sf.read("audio.wav")
+audio,sr=sf.read("audio.mp3")
 text=whisper.transcribe(audio,sr)
 print(text)
