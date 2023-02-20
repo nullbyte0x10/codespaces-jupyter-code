@@ -48,7 +48,24 @@ def split_string(string):
         pairs = [string[i:i+2] for i in range(0, len(string)-1, 2)]
         pairs.append(string[-1] + '_')
     return pairs
-for num in range(10,12):
-    for j in range(9,num):
-        print(num*j)
-        
+def two_sum(numbers,target):
+    num_dict={}
+    for i,j in enumerate(numbers):
+        complement=target-j
+        if complement in num_dict:
+            return [num_dict[complement],i]
+        num_dict[j]=i
+    return None
+def increment_string(strng):
+    #split the string
+    splitted=[i for i in strng]
+    if splitted[-1].isdigit():
+        #increment last digit
+        splitted[-1]=str(int(splitted[-1])+1)
+    else:
+        splitted.append(str(1))
+    return "".join(splitted)
+if __name__=="__main__":
+    print(increment_string("foo"))
+    print(increment_string("foobar23")) 
+    print(increment_string("foobar910"))
