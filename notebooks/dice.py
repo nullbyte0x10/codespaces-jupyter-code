@@ -1,8 +1,8 @@
 import random
 #list to store results
 results=[0,0,0,0,0,0]
-total_rolls=1000
-for i in range(total_rolls):
+TOTAL_ROLLS=1000
+for i in range(TOTAL_ROLLS):
     #generate a random number
     roll=random.random()
     if roll<1/6:
@@ -21,4 +21,4 @@ for i in range(total_rolls):
 print("Face       Percentage")
 print("----       ----------")
 for i,j in enumerate(results):
-    print(f"Face {i+1}: {j} ({j/total_rolls*100:.2f}%)")
+    print(f"Face {i+1}: {j} ({j/TOTAL_ROLLS*100:.2f}%)")

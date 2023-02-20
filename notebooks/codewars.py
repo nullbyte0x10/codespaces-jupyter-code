@@ -1,4 +1,3 @@
-import string
 def narcissistic(value):
     # count number of digits
     num_digits = len(str(value))
@@ -42,10 +41,14 @@ def validate_pin(pin):
        return True
     else:
        return False 
-def split_string(s):
-    #split the string
-    splitted=[i for i in s]
-    return splitted
-
-if __name__=="__main__":
-    print(split_string("abc"))
+def split_string(string):
+    if len(string) % 2 == 0:
+        pairs = [string[i:i+2] for i in range(0, len(string), 2)]
+    else:
+        pairs = [string[i:i+2] for i in range(0, len(string)-1, 2)]
+        pairs.append(string[-1] + '_')
+    return pairs
+for num in range(10,12):
+    for j in range(9,num):
+        print(num*j)
+        
