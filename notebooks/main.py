@@ -27,7 +27,23 @@ outfile = None
 
 # Function prototypes
 def initialize():
-    pass
+    # initialize simulation clock
+    sim_time: float = 0.0
+    # initialize the state variables
+    server_status: int = IDLE
+    num_in_q: int = 0
+    time_last_event: float = 0.0
+    # initialize statistical counters
+    num_custs_delayed: int = 0
+    total_of_delays: float = 0.0
+    area_num_in_q: float = 0.0
+    area_server_status: float = 0.0
+    # Initialize event list. Since no customers are present, the departure (service completion) event is eliminated
+    # from consideration.
+
+    time_next_event[1] = sim_time+expon(mean_interarrival)
+    time_next_event[2] = 1.0e+30
+
 
 
 def timing():
@@ -104,10 +120,11 @@ def main():
             arrive()
         else:
             depart()
-    #invoke report generator and end simulation
+    # invoke report generator and end simulation
     report()
     infile.close()
     outfile.close()
+
 
 if __name__ == "__main__":
     pass
