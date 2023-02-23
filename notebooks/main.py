@@ -104,7 +104,10 @@ def main():
             arrive()
         else:
             depart()
-
+    #invoke report generator and end simulation
+    report()
+    infile.close()
+    outfile.close()
 
 if __name__ == "__main__":
     pass
