@@ -82,8 +82,29 @@ def main():
         mean_service: float = float(parts[1])
         num_delays_required: int = int(parts[2])
     # write report heading an input parameters
+    with open(outfile) as outfile:
+        outfile.write("Single-server queueing system\n\n")
+    with open(outfile) as outfile:
+        outfile.write("Mean interarrival time{:11.3f} minutes\n\n".format(mean_interarrival))
+    with open(outfile) as outfile:
+        outfile.write("Mean service time{:16.3f} minutes\n\n".format(mean_service))
+    with open(outfile) as outfile:
+        outfile.write("Number of customers{:14d}\n\n".format(num_delays_required))
+
+    # initialize the simulation
+    initialize()
+    # run the simulation while more delays are still needed
+    while num_custs_delayed < num_delays_required:
+        # determine next event
+        timing()
+        # update time average statistical accumulators
+        update_time_avg_stats()
+        # invoke the appropriate event function
+        if next_event_type == 1:
+            arrive()
+        else:
+            depart()
 
 
-
-if __name__=="__main__":
+if __name__ == "__main__":
     pass
