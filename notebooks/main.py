@@ -29,8 +29,8 @@ outfile = None
 
 def main():
     # open the input and output files
-    infile = open("mm1.in", "r")
-    outfile  = open("mm1.out", "w")
+    infile = open("input.txt", "r")
+    outfile  = open("output.txt", "w")
     # specify number of events for timing function
     num_events = 2
 
@@ -88,8 +88,8 @@ def initialize():
 
 
 def timing():
-    infile: TextIO = open("mm1.out", "r")
-    outfile: TextIO = open("mm1.out", "w")
+    infile: TextIO = open("output.txt", "r")
+    outfile: TextIO = open("output.txt", "w")
     sim_time: float = 0.0
     i: int = 0
     min_time_next_event: float = 1.0e+29
